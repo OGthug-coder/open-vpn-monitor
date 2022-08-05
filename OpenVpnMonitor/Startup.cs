@@ -1,4 +1,4 @@
-namespace OpenVPNMonitor
+namespace OpenVpnMonitor
 {
     public class Startup
     {

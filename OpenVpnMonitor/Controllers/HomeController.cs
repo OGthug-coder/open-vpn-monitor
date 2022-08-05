@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace OpenVPNMonitor.Controllers;
+namespace OpenVpnMonitor.Controllers;
 
 [Route("home")]
 public class HomeController : Controller

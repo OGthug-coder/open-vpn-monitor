@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "open-vpn-monitor", "open-vpn-monitor\open-vpn-monitor.csproj", "{4EC3B9BF-6FE8-4E7A-ABEC-A02A67031514}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVpnMonitor", "OpenVpnMonitor\OpenVpnMonitor.csproj", "{4EC3B9BF-6FE8-4E7A-ABEC-A02A67031514}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
