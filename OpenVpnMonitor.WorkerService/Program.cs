@@ -1,4 +1,5 @@
-using OpenVpnMonitor.WorkerService;
+using CoinKeeper.DataAccess.Database;
+using Microsoft.EntityFrameworkCore;
 
 namespace OpenVpnMonitor.WorkerService
 {
@@ -11,8 +12,16 @@ namespace OpenVpnMonitor.WorkerService
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureServices(services =>
+                .ConfigureServices((hostContext, services) =>
                 {
+                    services.AddDbContext<ApplicationDbContext>(options =>
+                    {
+                        options.UseNpgsql(hostContext.Configuration.GetConnectionString("DefaultConnection"),
+                            optionsBuilder =>
+                            {
+                                optionsBuilder.MigrationsAssembly("OpenVpnMonitor.WorkerService");
+                            });
+                    });
                     services.AddHostedService<Worker>();
                 });
         }
