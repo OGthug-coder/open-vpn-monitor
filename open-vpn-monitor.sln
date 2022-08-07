@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVpnMonitor", "OpenVpnMonitor\OpenVpnMonitor.csproj", "{4EC3B9BF-6FE8-4E7A-ABEC-A02A67031514}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVpnMonitor.Domain", "OpenVpnMonitor.Domain\OpenVpnMonitor.Domain.csproj", "{917F8C9B-1FCF-4E02-80AA-B159D626A857}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVpnMonitor.WorkerService", "OpenVpnMonitor.WorkerService\OpenVpnMonitor.WorkerService.csproj", "{BDFE36C3-EEEE-491A-81A4-0374546556B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{4EC3B9BF-6FE8-4E7A-ABEC-A02A67031514}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EC3B9BF-6FE8-4E7A-ABEC-A02A67031514}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EC3B9BF-6FE8-4E7A-ABEC-A02A67031514}.Release|Any CPU.Build.0 = Release|Any CPU
+		{917F8C9B-1FCF-4E02-80AA-B159D626A857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{917F8C9B-1FCF-4E02-80AA-B159D626A857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{917F8C9B-1FCF-4E02-80AA-B159D626A857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{917F8C9B-1FCF-4E02-80AA-B159D626A857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDFE36C3-EEEE-491A-81A4-0374546556B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFE36C3-EEEE-491A-81A4-0374546556B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFE36C3-EEEE-491A-81A4-0374546556B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFE36C3-EEEE-491A-81A4-0374546556B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
