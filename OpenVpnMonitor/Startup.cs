@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using OpenVpnMonitor.DataAccess;
+
 namespace OpenVpnMonitor
 {
     public class Startup
@@ -13,6 +16,10 @@ namespace OpenVpnMonitor
         {
             services.AddControllers();
             services.AddSwaggerGen();
+
+            services.AddDbContext<ApplicationDbContext>(builder => builder.UseNpgsql(
+                _configuration.GetConnectionString("DefaultConnection"),
+                optionsBuilder => optionsBuilder.MigrationsAssembly("OpenVpnMonitor")));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

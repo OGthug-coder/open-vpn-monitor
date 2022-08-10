@@ -9,4 +9,6 @@ public interface IVpnUserRepository
     Task<VpnUser> UpdateUserAsync(VpnUser user);
 
     Task<VpnUser> FindUserByIdAsync(long id);
+
+    Task<VpnUser> FindUserByNameAsync(string name);
 }

@@ -1,8 +1,8 @@
-using CoinKeeper.DataAccess.Database.Maps;
 using Microsoft.EntityFrameworkCore;
+using OpenVpnMonitor.DataAccess.Maps;
 using OpenVpnMonitor.Domain.Models;
 
-namespace CoinKeeper.DataAccess.Database;
+namespace OpenVpnMonitor.DataAccess;
 
 public class ApplicationDbContext : DbContext
 {

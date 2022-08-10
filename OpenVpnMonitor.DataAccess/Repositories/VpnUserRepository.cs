@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using OpenVpnMonitor.Domain.Models;
 using OpenVpnMonitor.Domain.Repositories;
 
-namespace CoinKeeper.DataAccess.Database.Repositories;
+namespace OpenVpnMonitor.DataAccess.Repositories;
 
 public class VpnUserRepository : IVpnUserRepository
 {
@@ -29,6 +29,11 @@ public class VpnUserRepository : IVpnUserRepository
 
     public async Task<VpnUser> FindUserByIdAsync(long id)
     {
-        return (await _dbContext.VpnUsers!.FirstOrDefaultAsync(x => x.Id == id))!;
+        return (await _dbContext.VpnUsers.FirstOrDefaultAsync(x => x.Id == id));
+    }
+
+    public async Task<VpnUser> FindUserByNameAsync(string name)
+    {
+        return await _dbContext.VpnUsers.FirstOrDefaultAsync(x => x.Name == name);
     }
 }

@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using OpenVpnMonitor.Domain.Models;
 using OpenVpnMonitor.Domain.Repositories;
 
-namespace CoinKeeper.DataAccess.Database.Repositories;
+namespace OpenVpnMonitor.DataAccess.Repositories;
 
 public class RecordRepository : IRecordRepository
 {

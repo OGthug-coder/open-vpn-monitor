@@ -10,4 +10,8 @@ public class Record
     public long BytesReceived { get; set; }
     
     public long BytesSent { get; set; }
+    
+    public string ConnectedSince { get; set; }
+    
+    public DateTime DateTime { get; set; }
 }

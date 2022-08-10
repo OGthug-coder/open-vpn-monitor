@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace OpenVpnMonitor.WorkerService.Migrations
+namespace OpenVpnMonitor.Migrations
 {
     public partial class InitialCreate : Migration
     {
@@ -15,6 +15,7 @@ namespace OpenVpnMonitor.WorkerService.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    InternalId = table.Column<long>(type: "bigint", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
@@ -31,7 +32,8 @@ namespace OpenVpnMonitor.WorkerService.Migrations
                     UserId = table.Column<long>(type: "bigint", nullable: false),
                     IpAddress = table.Column<string>(type: "text", nullable: false),
                     BytesReceived = table.Column<long>(type: "bigint", nullable: false),
-                    BytesSent = table.Column<long>(type: "bigint", nullable: false)
+                    BytesSent = table.Column<long>(type: "bigint", nullable: false),
+                    ConnectedSince = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
