@@ -10,10 +10,13 @@ public class ManagementClient : IManagementClient
 {
     private readonly IPEndPoint _remoteEndPoint;
     private readonly IRecordParser _recordParser;
+    private readonly string _hostEntry;
 
     public ManagementClient(IConfiguration configuration, IRecordParser recordParser)
     {
+        _hostEntry = configuration["Management:Host"];
         _remoteEndPoint = new IPEndPoint(GetIpAddress(), Convert.ToInt32(configuration["Management:Port"]));
+        Console.WriteLine(_hostEntry);
         Console.WriteLine(_remoteEndPoint.Address);
         Console.WriteLine(_remoteEndPoint.Port);
         _recordParser = recordParser;
@@ -21,7 +24,7 @@ public class ManagementClient : IManagementClient
 
     private IPAddress GetIpAddress()
     {
-        var ipHostInfo = Dns.GetHostEntry("localhost");
+        var ipHostInfo = Dns.GetHostEntry(_hostEntry);
         var ipAddress = ipHostInfo.AddressList[0];
         return ipAddress;
     }
