@@ -25,7 +25,7 @@ public class ManagementClient : IManagementClient
     private IPAddress GetIpAddress()
     {
         var ipHostInfo = Dns.GetHostEntry(_hostEntry);
-        var ipAddress = ipHostInfo.AddressList[0];
+        var ipAddress = ipHostInfo.AddressList[1];
         return ipAddress;
     }
 
