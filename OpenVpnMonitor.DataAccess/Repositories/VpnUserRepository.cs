@@ -36,4 +36,9 @@ public class VpnUserRepository : IVpnUserRepository
     {
         return await _dbContext.VpnUsers.FirstOrDefaultAsync(x => x.Name == name);
     }
+
+    public async Task<IEnumerable<VpnUser>> GetUsersAsync()
+    {
+        return _dbContext.VpnUsers;
+    }
 }

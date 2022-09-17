@@ -11,4 +11,6 @@ public interface IVpnUserRepository
     Task<VpnUser> FindUserByIdAsync(long id);
 
     Task<VpnUser> FindUserByNameAsync(string name);
+
+    Task<IEnumerable<VpnUser>> GetUsersAsync();
 }

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using OpenVpnMonitor.DataAccess;
 
@@ -14,8 +15,13 @@ namespace OpenVpnMonitor
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllersWithViews();
             services.AddSwaggerGen();
+            
+            services.AddSpaStaticFiles(configuration =>
+            {
+                configuration.RootPath = "client-app/build";
+            });
 
             services.AddDbContext<ApplicationDbContext>(builder => builder.UseNpgsql(
                 _configuration.GetConnectionString("DefaultConnection"),
@@ -24,12 +30,11 @@ namespace OpenVpnMonitor
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseRouting();
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseRouting();
 
             if (env.IsDevelopment())
             {
@@ -37,6 +42,27 @@ namespace OpenVpnMonitor
                 app.UseSwaggerUI();
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
+            
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller}/{action=Index}/{id?}");
+            });
+            
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "client-app";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
+            });
         }
     }
 }
