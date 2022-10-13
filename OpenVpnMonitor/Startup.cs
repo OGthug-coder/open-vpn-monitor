@@ -1,12 +1,16 @@
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using OpenVpnMonitor.DataAccess;
+using OpenVpnMonitor.DataAccess.Repositories;
+using OpenVpnMonitor.Domain.Repositories;
+using OpenVpnMonitor.Services.StatsService;
+using OpenVpnMonitor.Services.VpnUserService;
 
 namespace OpenVpnMonitor
 {
     public class Startup
     {
-        private IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
 
         public Startup(IConfiguration configuration)
         {
@@ -26,6 +30,12 @@ namespace OpenVpnMonitor
             services.AddDbContext<ApplicationDbContext>(builder => builder.UseNpgsql(
                 _configuration.GetConnectionString("DefaultConnection"),
                 optionsBuilder => optionsBuilder.MigrationsAssembly("OpenVpnMonitor")));
+
+            services.AddTransient<IVpnUserRepository, VpnUserRepository>();
+            services.AddTransient<IRecordRepository, RecordRepository>();
+                
+            services.AddTransient<IVpnUserService, VpnUserService>();
+            services.AddTransient<IStatsService, StatsService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -27,6 +27,6 @@ public class RecordRepository : IRecordRepository
 
     public IEnumerable<Record> FindRecords(Func<Record, bool> func)
     {
-        return _dbContext.Records.Where(func);
+        return _dbContext.Records.Include(record => record.User).Where(func);
     }
 }

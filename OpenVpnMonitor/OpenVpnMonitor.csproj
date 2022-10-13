@@ -24,6 +24,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\OpenVpnMonitor.DataAccess\OpenVpnMonitor.DataAccess.csproj" />
+      <ProjectReference Include="..\OpenVpnMonitor.Services\OpenVpnMonitor.Services.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -38,7 +39,7 @@
     
     <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
         <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
-        <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build"/>
+        <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
 
         <ItemGroup>
             <DistFiles Include="$(SpaRoot)build/**" />

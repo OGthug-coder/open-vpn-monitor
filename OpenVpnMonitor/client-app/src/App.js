@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import {GetStatsByPeriod} from "./Api";
+import Plotly from 'plotly.js-dist-min'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const getRequestModel = () => {
+  const from = new Date("2022-09-19T17:30:06.566Z");
+  const to = new Date("2022-09-19T17:50:06.566Z");
+  return { from: from, to: to }
 }
 
-export default App;
+export function App() {
+  const [data, setData] = useState(0);
+  
+  useEffect(() => {
+    GetStatsByPeriod(getRequestModel())
+        .then(x => setData(x));
+
+    debugger
+    Plotly.newPlot("myDiv", /* JSON object */ {
+      "data": data.traces,
+      "layout": { "width": 600, "height": 400}
+    })
+  })
+  
+  return <div id="myDiv"/>
+}
