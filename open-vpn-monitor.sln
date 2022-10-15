@@ -6,10 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVpnMonitor.Domain", "Op
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVpnMonitor.WorkerService", "OpenVpnMonitor.WorkerService\OpenVpnMonitor.WorkerService.csproj", "{BDFE36C3-EEEE-491A-81A4-0374546556B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVpnMonitor.DataAccess", "OpenVpnMonitor.DataAccess\OpenVpnMonitor.DataAccess.csproj", "{B14EF50F-AB0B-4B84-929A-FCBBCCD2890F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVpnMonitor.Services", "OpenVpnMonitor.Services\OpenVpnMonitor.Services.csproj", "{5C87681C-D70F-4DBC-AD5C-8CE76E576D62}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,13 +24,5 @@ Global
 		{BDFE36C3-EEEE-491A-81A4-0374546556B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDFE36C3-EEEE-491A-81A4-0374546556B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDFE36C3-EEEE-491A-81A4-0374546556B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B14EF50F-AB0B-4B84-929A-FCBBCCD2890F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B14EF50F-AB0B-4B84-929A-FCBBCCD2890F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B14EF50F-AB0B-4B84-929A-FCBBCCD2890F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B14EF50F-AB0B-4B84-929A-FCBBCCD2890F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C87681C-D70F-4DBC-AD5C-8CE76E576D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C87681C-D70F-4DBC-AD5C-8CE76E576D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C87681C-D70F-4DBC-AD5C-8CE76E576D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C87681C-D70F-4DBC-AD5C-8CE76E576D62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

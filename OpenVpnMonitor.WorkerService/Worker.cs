@@ -1,5 +1,3 @@
-using OpenVpnMonitor.Domain.Models;
-using OpenVpnMonitor.WorkerService.Infrastructure;
 using OpenVpnMonitor.WorkerService.VpnManagement;
 
 namespace OpenVpnMonitor.WorkerService;

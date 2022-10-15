@@ -6,8 +6,6 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>OpenVpnMonitor</RootNamespace>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-        <SpaRoot>client-app/</SpaRoot>
-        <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules/**</DefaultItemExcludes>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,36 +17,12 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.6" />
+        <PackageReference Include="prometheus-net" Version="7.0.0-pre-000301-06c5932" />
+        <PackageReference Include="prometheus-net.AspNetCore" Version="7.0.0-pre-000301-06c5932" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\OpenVpnMonitor.DataAccess\OpenVpnMonitor.DataAccess.csproj" />
-      <ProjectReference Include="..\OpenVpnMonitor.Services\OpenVpnMonitor.Services.csproj" />
+      <ProjectReference Include="..\OpenVpnMonitor.WorkerService\OpenVpnMonitor.WorkerService.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="wwwroot" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Content Remove="$(SpaRoot)**" />
-        <None Remove="$(SpaRoot)**" />
-        <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules/**" />
-    </ItemGroup>
-    
-    <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
-        <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
-        <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
-
-        <ItemGroup>
-            <DistFiles Include="$(SpaRoot)build/**" />
-            <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-                <RelativePath>%(DistFiles.Identity)</RelativePath>
-                <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-                <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-            </ResolvedFileToPublish>
-        </ItemGroup>
-    </Target>
-    
 </Project>
