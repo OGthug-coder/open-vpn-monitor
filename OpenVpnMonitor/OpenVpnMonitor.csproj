@@ -23,6 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\OpenVpnMonitor.Domain\OpenVpnMonitor.Domain.csproj" />
       <ProjectReference Include="..\OpenVpnMonitor.WorkerService\OpenVpnMonitor.WorkerService.csproj" />
     </ItemGroup>
 </Project>

@@ -19,6 +19,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\OpenVpnMonitor.DataAccess\OpenVpnMonitor.DataAccess.csproj" />
+      <ProjectReference Include="..\OpenVpnMonitor.Domain\OpenVpnMonitor.Domain.csproj" />
     </ItemGroup>
 </Project>
