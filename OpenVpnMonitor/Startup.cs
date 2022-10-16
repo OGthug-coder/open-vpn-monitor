@@ -22,7 +22,6 @@ namespace OpenVpnMonitor
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseEndpoints(builder =>
             {
