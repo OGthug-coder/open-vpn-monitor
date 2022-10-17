@@ -19,4 +19,4 @@ jobs:
     - name: pwd
       run: pwd
     - name: Build the Docker image
-      run: docker build ./OpenVpnMonitor --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file ./OpenVpnMonitor/Dockerfile --tag my-image-name:$(date +%s)
