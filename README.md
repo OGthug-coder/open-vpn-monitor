@@ -23,7 +23,7 @@ Set OpenVPN management port, scrapping interval and host address
 ## Usage
 
 You can scrap metrics for Prometheus from `/metrics` url:
-```json
+```
 # HELP openvpnmonitor_bytes_received_gauge Bytes received gauge
 # TYPE openvpnmonitor_bytes_received_gauge gauge
 openvpnmonitor_bytes_received_gauge{user_name="User1"} 2319907
