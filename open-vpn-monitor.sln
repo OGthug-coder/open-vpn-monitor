@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVpnMonitor.Domain", "Op
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVpnMonitor.WorkerService", "OpenVpnMonitor.WorkerService\OpenVpnMonitor.WorkerService.csproj", "{BDFE36C3-EEEE-491A-81A4-0374546556B5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E2795D9E-963E-43C2-9160-B64FA9090DE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,10 @@ Global
 		{BDFE36C3-EEEE-491A-81A4-0374546556B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDFE36C3-EEEE-491A-81A4-0374546556B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDFE36C3-EEEE-491A-81A4-0374546556B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4EC3B9BF-6FE8-4E7A-ABEC-A02A67031514} = {E2795D9E-963E-43C2-9160-B64FA9090DE8}
+		{917F8C9B-1FCF-4E02-80AA-B159D626A857} = {E2795D9E-963E-43C2-9160-B64FA9090DE8}
+		{BDFE36C3-EEEE-491A-81A4-0374546556B5} = {E2795D9E-963E-43C2-9160-B64FA9090DE8}
 	EndGlobalSection
 EndGlobal
