@@ -39,3 +39,4 @@ openvpnmonitor_bytes_sent_gauge{user_name="User4"} 10946158
 ```
 
 ### Grafana dashboard
+<img width="680" alt="image" src="https://user-images.githubusercontent.com/54175086/196220497-f6cf413e-45a6-4cf8-8136-64d07f72bc2c.png">
